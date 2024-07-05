@@ -2,16 +2,15 @@ const initialState = {
   numOfCakes: 10,
 };
 export default function cakeReducer(state = initialState, aciton) {
-switch (aciton.type) {
+  switch (aciton.type) {
     case "BUY_CAKE": {
-        return {
-            ...state, 
-          numOfCakes :  state.numOfCakes -1
-        }
+      return {
+        ...state,
+        numOfCakes: state.numOfCakes - aciton.value,
+      };
     }
-        
-      
 
-    default: return state
+    default:
+      return state;
+  }
 }
-};
